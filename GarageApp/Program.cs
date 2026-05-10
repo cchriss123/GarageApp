@@ -2,21 +2,20 @@
 
 namespace GarageApp;
 
-class Program
+internal static class Program
 {
-    static void Main(string[] args)
+    private static void Main()
     {
-        Garage garage = new Garage();
+        var garage = new Garage();
 
-        string menuText =
-            """
-            Welcome to Garage App
-            Please select an option from the menu
-            1. Park.
-            2. Remove.
-            3. List
-            E. Exit app.
-            """;
+        const string menuText = """
+                                Welcome to Garage App
+                                Please select an option from the menu
+                                1. Park.
+                                2. Remove.
+                                3. List
+                                E. Exit app.
+                                """;
         
         var isRunning = true;
         while (isRunning)
@@ -41,7 +40,8 @@ class Program
                     GarageViewer.ListVehicles(garage);
                     break;
                     
-                case "E" or "e": isRunning = false; break;
+                case "E" or "e": isRunning = false; 
+                    break;
                 default: Console.WriteLine("Felaktigt alternativ"); break;
                 
             }
