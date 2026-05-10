@@ -6,7 +6,7 @@ public class Garage
 {
    private readonly Vehicle?[] _vehicles = new Vehicle[50];
    
-   public Garage()
+   public Garage(byte amountOfSlots, bool isPrePopulated)
    {
       _vehicles[0] = new Car("ABC123", Color.Red, 4, true);
       _vehicles[1] = new Car("CAR456", Color.Blue, 4, false);
@@ -73,4 +73,5 @@ public class Garage
       _vehicles[slot] = null;
       Console.WriteLine($"Vehicle removed from slot {slot}.");
    }
+   
 }

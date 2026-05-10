@@ -6,7 +6,9 @@ internal static class Program
 {
     private static void Main()
     {
-        var garage = new Garage();
+
+        
+        var garage = GarageSetup.CreateGarageFromInput();
 
         const string menuText = """
                                 Welcome to Garage App
@@ -47,23 +49,7 @@ internal static class Program
             }
             
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-        
-     
     }
+    
 }
 
