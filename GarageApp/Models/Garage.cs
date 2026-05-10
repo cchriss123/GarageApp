@@ -1,3 +1,5 @@
+using GarageApp.Models.Vehicles;
+
 namespace GarageApp;
 
 public class Garage
