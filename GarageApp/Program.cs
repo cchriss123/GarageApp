@@ -15,7 +15,8 @@ internal static class Program
                                 Please select an option from the menu
                                 1. Park.
                                 2. Remove.
-                                3. List
+                                3. List vehicles.
+                                4. SearchMenu.
                                 E. Exit app.
                                 """;
         
@@ -41,7 +42,8 @@ internal static class Program
                 case "3":
                     GarageViewer.ListVehicles(garage);
                     break;
-                    
+                case "4": GarageViewer.SearchMenu(garage);
+                    break;
                 case "E" or "e": isRunning = false; 
                     break;
                 default: Console.WriteLine("Felaktigt alternativ"); break;
