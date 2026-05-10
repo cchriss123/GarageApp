@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using GarageApp.Models;
 using GarageApp.Models.Vehicles;
 
 namespace GarageApp.Ui;

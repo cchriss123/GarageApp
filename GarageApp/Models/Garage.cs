@@ -1,6 +1,6 @@
 using GarageApp.Models.Vehicles;
 
-namespace GarageApp;
+namespace GarageApp.Models;
 
 public class Garage
 {
@@ -73,5 +73,4 @@ public class Garage
       _vehicles[slot] = null;
       Console.WriteLine($"Vehicle removed from slot {slot}.");
    }
-   
 }

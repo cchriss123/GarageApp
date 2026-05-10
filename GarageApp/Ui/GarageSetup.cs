@@ -1,3 +1,5 @@
+using GarageApp.Models;
+
 namespace GarageApp.Ui;
 
 public static class GarageSetup

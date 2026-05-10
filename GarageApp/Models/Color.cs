@@ -1,4 +1,4 @@
-namespace GarageApp;
+namespace GarageApp.Models;
 
 public enum Color
 {
