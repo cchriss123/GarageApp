@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using GarageApp.Models.Vehicles;
 
-namespace GarageApp;
+namespace GarageApp.Ui;
 
 internal enum VehicleType
 {

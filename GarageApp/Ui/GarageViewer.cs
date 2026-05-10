@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace GarageApp;
+namespace GarageApp.Ui;
 
 public static class GarageViewer
 {

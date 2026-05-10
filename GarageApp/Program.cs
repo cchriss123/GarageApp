@@ -1,4 +1,6 @@
-﻿namespace GarageApp;
+﻿using GarageApp.Ui;
+
+namespace GarageApp;
 
 class Program
 {
