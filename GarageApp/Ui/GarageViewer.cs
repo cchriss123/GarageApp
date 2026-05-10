@@ -49,7 +49,7 @@ public static class GarageViewer
             if (vehicles[i] == null)
                 continue;
 
-            if (vehicles[i]?.RegistrationNumber == input)
+            if (vehicles[i]?.RegistrationNumber.ToLower() == input.ToLower())
             {
                 Console.Write($"Found at {i}: {vehicles[i]}.");
                 return;
