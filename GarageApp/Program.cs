@@ -36,7 +36,7 @@ class Program
                     VehicleRemover.RemoveVehicle(garage);
                     break;
                 case "3":
-                    
+                    GarageViewer.ListVehicles(garage);
                     break;
                     
                 case "E" or "e": isRunning = false; break;
