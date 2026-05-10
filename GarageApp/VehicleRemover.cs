@@ -2,7 +2,7 @@ using System.Text;
 
 namespace GarageApp;
 
-public class VehicleRemover
+public static class VehicleRemover
 {
     public static void RemoveVehicle(Garage garage)
     {

@@ -11,6 +11,8 @@ class Program
             Welcome to Garage App
             Please select an option from the menu
             1. Park.
+            2. Remove.
+            3. List
             E. Exit app.
             """;
         
@@ -32,6 +34,9 @@ class Program
                 }
                 case "2":
                     VehicleRemover.RemoveVehicle(garage);
+                    break;
+                case "3":
+                    
                     break;
                     
                 case "E" or "e": isRunning = false; break;
