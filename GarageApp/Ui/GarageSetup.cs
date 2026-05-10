@@ -21,15 +21,13 @@ public static class GarageSetup
         }
 
         Console.WriteLine("Do you want to populate the garage with test vehicles? (y/n)");
-        var answer = Console.ReadLine()?.Trim().ToLower();
+        var answer = Console.ReadLine()?.Trim().ToLower() ?? "";
 
         var isPrePopulated = false;
-
-        if (answer is not "y" and not "yes")
+        if (answer is "n" or "no")
         {
             return new Garage(amountOfSlots, isPrePopulated);
         }
-
         if (amountOfSlots >= 12)
         {
             isPrePopulated = true;
