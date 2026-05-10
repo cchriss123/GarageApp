@@ -4,10 +4,13 @@ namespace GarageApp.Models;
 
 public class Garage
 {
-   private readonly Vehicle?[] _vehicles = new Vehicle[50];
+   private readonly Vehicle?[] _vehicles; 
    
    public Garage(byte amountOfSlots, bool isPrePopulated)
    {
+      _vehicles = new Vehicle[amountOfSlots];
+
+      if (!isPrePopulated || amountOfSlots < 12) return; 
       _vehicles[0] = new Car("ABC123", Color.Red, 4, true);
       _vehicles[1] = new Car("CAR456", Color.Blue, 4, false);
       // 2 empty
@@ -23,9 +26,8 @@ public class Garage
       _vehicles[9] = new Boat("SEA123", Color.White, 0, true);
 
       _vehicles[10] = new Airplane("FLY123", Color.Grey, 8, true);
-      
+
       _vehicles[11] = new Car("XYZ789", Color.Black, 4, true);
-      
    }
    
    
