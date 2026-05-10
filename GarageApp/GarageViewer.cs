@@ -7,12 +7,12 @@ public static class GarageViewer
     public static void ListVehicles(Garage garage)
     {
         var sb = new StringBuilder();
-        
-        foreach (var v in garage.GetVehicles())
+
+        var vehicles = garage.GetVehicles();
+        for (var i = 0; i < vehicles.Length; i++)
         {
-            if (v != null)
-                sb.AppendLine(v.ToString());
-            
+            if (vehicles[i] != null)
+                sb.AppendLine($"{i}: {vehicles[i]?.ToString()}.");
         }
         Console.WriteLine(sb.ToString());
     }
