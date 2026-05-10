@@ -49,4 +49,26 @@ public class Garage
 
       Console.WriteLine("Cannot park since the garage is full.");
    }
+   
+   public Vehicle?[] GetVehicles()
+   {
+      return _vehicles.ToArray(); // Returns a copy to prevent external modification of the internal array
+   }
+
+
+   public void RemoveVehicle(int slot)
+   {
+      if (slot < 0 || slot >= _vehicles.Length)
+      {
+         Console.WriteLine("Please enter a valid number");
+         return;
+      }
+      if (_vehicles[slot] == null)
+      {
+         Console.WriteLine("There is no vehicle with slot number " + slot);
+         return;
+      }
+      _vehicles[slot] = null;
+      Console.WriteLine($"Vehicle removed from slot {slot}.");
+   }
 }

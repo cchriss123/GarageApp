@@ -12,7 +12,7 @@ internal enum VehicleType
     
 }
 
-public static class AddMenu
+public static class VehicleCreator
 {
     
     public static Vehicle? CreateVehicleFromInput()

@@ -24,12 +24,16 @@ class Program
             {
                 case "1":
                 {
-                    var vehicle = AddMenu.CreateVehicleFromInput();
+                    var vehicle = VehicleCreator.CreateVehicleFromInput();
                     if (vehicle is null) 
                         break;
                     garage.AddVehicle(vehicle);
                     break;
                 }
+                case "2":
+                    VehicleRemover.RemoveVehicle(garage);
+                    break;
+                    
                 case "E" or "e": isRunning = false; break;
                 default: Console.WriteLine("Felaktigt alternativ"); break;
                 
@@ -55,3 +59,4 @@ class Program
      
     }
 }
+
