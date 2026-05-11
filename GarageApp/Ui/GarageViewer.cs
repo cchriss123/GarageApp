@@ -108,7 +108,7 @@ public static class GarageViewer
         Console.WriteLine(colorSelection);
         var colorInput = Console.ReadLine() ?? "";
         
-        if (vehicleInput is "1" or "2" or "3" or "4" or "5"  or "6" or "7")
+        if (colorInput is "1" or "2" or "3" or "4" or "5"  or "6" or "7")
         {
             for (var i = 0; i < vehicles.Length; i++)
             {
