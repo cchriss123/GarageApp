@@ -1,5 +1,4 @@
-﻿using GarageApp.Models;
-using GarageApp.Ui;
+﻿using GarageApp.Ui;
 
 namespace GarageApp;
 
