@@ -60,7 +60,7 @@ public static class GarageViewer
     {
         var vehicles = garage.GetVehiclesClone();
         
-        Console.WriteLine("Please enter number to search for: ");
+        Console.WriteLine("Please enter registration number to search for:");
         
         var input = Console.ReadLine() ?? "";
         
@@ -164,7 +164,10 @@ public static class GarageViewer
         
         var hasHits = vehicles.Any(v => v != null);
         
-        var output = hasHits ? $"Following vehicles found:\n{ListVehicles(vehicles)}" : "No vehicles found.";
+        var output = hasHits 
+            ? $"Following vehicles found:\n{ListVehicles(vehicles)}" 
+            : "No vehicles found.";
+        
         Console.WriteLine(output);
         UiHelper.PressEnterToContinue();
         

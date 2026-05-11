@@ -12,6 +12,7 @@ internal static class Program
         const string menuText = """
                                 Welcome to Garage App
                                 Please select an option from the menu
+
                                 1. Park.
                                 2. Remove.
                                 3. List vehicles.
