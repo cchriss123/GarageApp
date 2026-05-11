@@ -1,8 +1,8 @@
 namespace GarageApp.Ui;
 
-public class UiHelper
+public static class UiHelper
 {
-        private static void PressEnterToContinue()
+        public static void PressEnterToContinue()
         {
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();

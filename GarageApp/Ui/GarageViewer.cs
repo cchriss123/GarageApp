@@ -6,7 +6,16 @@ namespace GarageApp.Ui;
 
 public static class GarageViewer
 {
-    public static string ListVehicles(Vehicle?[] vehicles)
+    
+    public static void ShowVehicles(Garage garage)
+    {
+        var listVehicles = GarageViewer.ListVehicles(garage.GetVehiclesClone());
+        var listVehiclesOutput = listVehicles.Length > 0 ? listVehicles : "No vehicles in the garage";
+        Console.WriteLine(listVehiclesOutput);
+        UiHelper.PressEnterToContinue();
+    }
+    
+    private static string ListVehicles(Vehicle?[] vehicles)
     {
         var sb = new StringBuilder();
 
@@ -20,27 +29,38 @@ public static class GarageViewer
 
     public static void SearchMenu(Garage garage)
     {
-        const string searchMenuText = """
-                                      Search vehicles
-                                      1. Search by registration number
-                                      2. Filter by vehicle properties
+        while (true)
+        {
+            const string searchMenuText = """
+                                          Search vehicles
+                                          1. Search by registration number
+                                          2. Filter by vehicle properties
 
-                                      Any other key to go back.
-                                      """;
-        Console.WriteLine(searchMenuText);
-        var input = Console.ReadLine() ?? "";
+                                          Any other key to go back.
+                                          """;
+            
+            Console.WriteLine(searchMenuText);
+            var input = Console.ReadLine() ?? "";
 
-        if (input == "1")
-            SearchByRegNumber(garage);
-        else if (input == "2") 
-            SearchByVehicleProperties(garage);
+            switch (input)
+            {
+                case "1":
+                    SearchByRegNumber(garage);
+                    break;
+                case "2":
+                    SearchByVehicleProperties(garage);
+                    break;
+                default:
+                    return;
+            }
+        }
     }
 
     private static void SearchByRegNumber(Garage garage)
     {
         var vehicles = garage.GetVehiclesClone();
         
-        Console.Write("Search by register number:\nPlease enter number to search for ");
+        Console.WriteLine("Please enter number to search for: ");
         
         var input = Console.ReadLine() ?? "";
         
@@ -51,11 +71,13 @@ public static class GarageViewer
 
             if (vehicles[i]?.RegistrationNumber.ToLower() == input.ToLower())
             {
-                Console.Write($"Found at {i}: {vehicles[i]}.");
+                Console.WriteLine($"Found at slot {i}: {vehicles[i]}");
+                UiHelper.PressEnterToContinue();
                 return;
             }
         }
-        Console.WriteLine($"{input} not found.");
+        Console.WriteLine("Vehicle not found.");
+        UiHelper.PressEnterToContinue();
     }
     
     private static void SearchByVehicleProperties(Garage garage)
@@ -144,6 +166,7 @@ public static class GarageViewer
         
         var output = hasHits ? $"Following vehicles found:\n{ListVehicles(vehicles)}" : "No vehicles found.";
         Console.WriteLine(output);
+        UiHelper.PressEnterToContinue();
         
     }
 }

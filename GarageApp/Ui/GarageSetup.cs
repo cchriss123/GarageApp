@@ -11,7 +11,11 @@ public static class GarageSetup
 
         byte amountOfSlots = 20;
 
-        if (byte.TryParse(input, out var parsedSlots) && parsedSlots > 0)
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            Console.WriteLine("Using default capacity: 20");
+        }
+        else if (byte.TryParse(input, out var parsedSlots) && parsedSlots > 0)
         {
             amountOfSlots = parsedSlots;
         }

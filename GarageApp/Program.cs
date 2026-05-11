@@ -1,4 +1,5 @@
-﻿using GarageApp.Ui;
+﻿using GarageApp.Models;
+using GarageApp.Ui;
 
 namespace GarageApp;
 
@@ -6,7 +7,6 @@ internal static class Program
 {
     private static void Main()
     {
-
         
         var garage = GarageSetup.CreateGarageFromInput();
 
@@ -40,18 +40,18 @@ internal static class Program
                     VehicleRemover.RemoveVehicle(garage);
                     break;
                 case "3":
-                    Console.WriteLine(GarageViewer.ListVehicles(garage.GetVehiclesClone()));
+                    GarageViewer.ShowVehicles(garage);
                     break;
                 case "4": GarageViewer.SearchMenu(garage);
                     break;
                 case "E" or "e": isRunning = false; 
                     break;
-                default: Console.WriteLine("Felaktigt alternativ"); break;
-                
+                default: 
+                    Console.WriteLine("Invalid option."); 
+                    UiHelper.PressEnterToContinue();
+                    break;
             }
-            
         }
     }
-    
 }
 
