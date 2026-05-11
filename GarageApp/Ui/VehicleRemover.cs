@@ -9,7 +9,7 @@ public static class VehicleRemover
     {
         var sb = new StringBuilder();
         
-        var vehicles = garage.GetVehicles();
+        var vehicles = garage.GetVehiclesClone();
         
         sb.Append("There are vehicles parked at slot number ");
         for (var i = 0; i < vehicles.Length; i++)

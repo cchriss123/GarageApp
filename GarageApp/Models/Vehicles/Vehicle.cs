@@ -11,6 +11,6 @@ public abstract class Vehicle(string regNumber, Color color,  byte amountOfWheel
     
     public  override string ToString()
     {
-        return $"{GetType().Name}, Registration Number: {RegistrationNumber}, Color: {Color}";
+        return $"{GetType().Name}, Registration Number: {RegistrationNumber}, Color: {Color},  AmountOfWheels: {AmountOfWheels}";
     }
 }

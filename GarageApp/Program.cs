@@ -40,7 +40,7 @@ internal static class Program
                     VehicleRemover.RemoveVehicle(garage);
                     break;
                 case "3":
-                    GarageViewer.ListVehicles(garage);
+                    Console.WriteLine(GarageViewer.ListVehicles(garage.GetVehiclesClone()));
                     break;
                 case "4": GarageViewer.SearchMenu(garage);
                     break;

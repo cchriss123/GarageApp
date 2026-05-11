@@ -54,7 +54,7 @@ public class Garage
       Console.WriteLine("Cannot park since the garage is full.");
    }
    
-   public Vehicle?[] GetVehicles()
+   public Vehicle?[] GetVehiclesClone()
    {
       return _vehicles.ToArray(); // Returns a copy to prevent external modification of the internal array
    }
