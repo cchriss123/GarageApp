@@ -17,12 +17,12 @@ internal enum VehicleType
 public static class VehicleCreator
 {
     
-    public static Vehicle? CreateVehicleFromInput()
+    public static Vehicle? CreateVehicleFromInput(Garage garage)
     {
         var vehicleType = GetVehicleType();
         if (vehicleType is null) return null;
 
-        var regNumber = GetRegNumber();
+        var regNumber = GetRegNumber(garage);
         byte amountOfWheels = GetAmountOfWheels();
         var color = GetColor();
 
@@ -84,7 +84,7 @@ public static class VehicleCreator
         }
     }
     
-    private static string GetRegNumber()
+    private static string GetRegNumber(Garage garage)
     {
         const string menuText = "Please enter a registration number\nFormat: ABC123 (3 letters followed by 3 digits)";
         
@@ -92,16 +92,27 @@ public static class VehicleCreator
         {
             Console.WriteLine(menuText);
             var input = Console.ReadLine() ?? "";
-            var isValidInput = ValidateRegNumber(input);
+            var isValidRegNumber = ValidateRegNumberFormat(input);
+            var garageContainsRegNumber = garage.ContainsRegNumber(input);
             
-            if (isValidInput) 
+            if (isValidRegNumber && !garageContainsRegNumber) 
                 return input;
+
+            if (!isValidRegNumber)
+            {
+                Console.WriteLine("Invalid input format");
+                
+            }
+
+            if (garageContainsRegNumber)
+            {
+                Console.WriteLine("Garage already contains reg number");
+            }
             
-            Console.WriteLine("Invalid input");
         }
     }
 
-    private static bool ValidateRegNumber(string input)
+    private static bool ValidateRegNumberFormat(string input)
     {
         var trimmedInput = input.Trim();
         var trimmedInputLength = trimmedInput.Length;   

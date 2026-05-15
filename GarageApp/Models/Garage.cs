@@ -59,6 +59,11 @@ public class Garage
       return _vehicles.ToArray(); // Returns a copy to prevent external modification of the internal array
    }
 
+   public Boolean ContainsRegNumber(String regNumber)
+   {
+      return _vehicles.OfType<Vehicle>().Any(vehicle => vehicle.RegistrationNumber.Equals(regNumber, StringComparison.CurrentCultureIgnoreCase));
+   }
+
 
    public void RemoveVehicle(int slot)
    {

@@ -30,7 +30,7 @@ internal static class Program
             {
                 case "1":
                 {
-                    var vehicle = VehicleCreator.CreateVehicleFromInput();
+                    var vehicle = VehicleCreator.CreateVehicleFromInput(garage);
                     if (vehicle is null) 
                         break;
                     garage.AddVehicle(vehicle);
