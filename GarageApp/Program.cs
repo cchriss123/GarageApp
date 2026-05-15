@@ -16,7 +16,7 @@ internal static class Program
                                 1. Park.
                                 2. Remove.
                                 3. List vehicles.
-                                4. SearchMenu.
+                                4. Search menu.
                                 E. Exit app.
                                 """;
         
