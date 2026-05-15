@@ -4,12 +4,12 @@ using GarageApp.Models.Vehicles;
 
 namespace GarageApp.Ui;
 
-public static class GarageViewer
+public static class GarageViewer 
 {
     
     public static void ShowVehicles(Garage garage)
     {
-        var listVehicles = GarageViewer.ListVehicles(garage.GetVehiclesClone());
+        var listVehicles = ListVehicles(garage.GetVehiclesClone());
         var listVehiclesOutput = listVehicles.Length > 0 ? listVehicles : "No vehicles in the garage";
         Console.WriteLine(listVehiclesOutput);
         UiHelper.PressEnterToContinue();

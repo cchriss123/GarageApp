@@ -10,6 +10,14 @@ public static class VehicleRemover
         var sb = new StringBuilder();
         
         var vehicles = garage.GetVehiclesClone();
+
+        if (vehicles.Length == 0)
+        {
+            Console.WriteLine("No vehicles found");
+            UiHelper.PressEnterToContinue();
+            return;
+            
+        }
         
         sb.Append("There are vehicles parked at slot number ");
         for (var i = 0; i < vehicles.Length; i++)
