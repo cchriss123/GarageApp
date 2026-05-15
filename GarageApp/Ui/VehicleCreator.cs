@@ -23,6 +23,10 @@ public static class VehicleCreator
         if (vehicleType is null) return null;
 
         var regNumber = GetRegNumber(garage);
+        
+        if (regNumber is null) return null;
+        
+        
         byte amountOfWheels = GetAmountOfWheels();
         var color = GetColor();
 
@@ -84,7 +88,7 @@ public static class VehicleCreator
         }
     }
     
-    private static string GetRegNumber(Garage garage)
+    private static string? GetRegNumber(Garage garage)
     {
         const string menuText = "Please enter a registration number\nFormat: ABC123 (3 letters followed by 3 digits)";
         
@@ -104,11 +108,17 @@ public static class VehicleCreator
                 
             }
 
-            if (garageContainsRegNumber)
-            {
-                Console.WriteLine("Garage already contains reg number");
-            }
+            if (!garageContainsRegNumber) continue;
             
+            
+            Console.WriteLine("Garage already contains reg number");
+            Console.WriteLine("Press Enter to try again, press e or E to exit to main menu");
+            var tryAgainInput = Console.ReadLine() ?? "";
+            if (tryAgainInput.Equals("e", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return null;
+            }
+
         }
     }
 
